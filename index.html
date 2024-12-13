@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f8e8f9, #e4c3f5);
+            color: #4c2154;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-image: url('public/images/background.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            margin: 0;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Swiper styles */
+        .swiper {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        .video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .answer {
+            margin-top: 20px;
+        }
+
+        .answer button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background: #d19ad3;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .answer button:hover {
+            background: #b273ad;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .swiper-slide img {
+                max-width: 100%;
+            }
+
+            .answer button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Ты выйдешь за меня?</h1>
+    <p>Ты — самое важное, что есть в моей жизни ❤️</p>
+</header>
+
+<div class="section" id="photos">
+    <h2>Наши воспоминания</h2>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/300x200?text=Memory+1" alt="Memory 1" onclick="openImage(this.src)">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/300x200?text=Memory+2" alt="Memory 2" onclick="openImage(this.src)">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/300x200?text=Memory+3" alt="Memory 3" onclick="openImage(this.src)">
+            </div>
+        </div>
+        <!-- Add navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+<div class="section" id="video">
+    <h2>Моё послание к тебе</h2>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/your-video-id" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="section" id="answer">
+    <h2>Ты скажешь "Да"?</h2>
+    <div class="answer">
+        <button>Да! 💍</button>
+    </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+        spaceBetween: 20,
+    });
+
+    // Open image in full screen
+    function openImage(src) {
+        const imgWindow = window.open("", "_blank");
+        imgWindow.document.write(`<img src="${src}" style="width:100%; height:auto;">`);
+    }
+</script>
+</body>
+</html>
