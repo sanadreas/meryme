@@ -326,3 +326,24 @@ body {
 audio {
     display: none;
 }
+
+.play-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #d19ad3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.play-button:hover {
+    background: #b273ad;
+    transform: scale(1.1);
+}

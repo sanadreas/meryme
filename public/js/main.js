@@ -45,6 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.getElementById("play-music").addEventListener("click", function () {
+    const music = document.getElementById("background-music");
+    music.play(); // Запускаем музыку
+    this.style.display = "none"; // Скрываем кнопку
+});
+
 // Функция для создания фиксированного количества объектов
 function initializeFallingDecor() {
     const container = document.querySelector('.falling-decor');
