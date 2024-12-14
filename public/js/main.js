@@ -89,3 +89,58 @@ function initializeFallingDecor() {
 
 // Вызываем при загрузке
 initializeFallingDecor();
+
+
+document.getElementById("yes-button").addEventListener("click", function () {
+    // Показываем поздравительное сообщение
+    const congratsMessage = document.getElementById("congrats-message");
+    congratsMessage.classList.remove("hidden");
+
+    // Прокручиваем страницу к поздравительному сообщению
+    congratsMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    // Запускаем конфетти
+    launchConfetti();
+});
+
+function launchConfetti() {
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const confettiArray = [];
+    const colors = ["#FFD700", "#FF69B4", "#ADFF2F", "#87CEEB", "#FF4500"];
+
+    for (let i = 0; i < 300; i++) {
+        confettiArray.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height,
+            size: Math.random() * 10 + 5,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            speedY: Math.random() * 3 + 2,
+            speedX: (Math.random() - 0.5) * 3
+        });
+    }
+
+    function drawConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        confettiArray.forEach(confetti => {
+            ctx.beginPath();
+            ctx.arc(confetti.x, confetti.y, confetti.size, 0, Math.PI * 2);
+            ctx.fillStyle = confetti.color;
+            ctx.fill();
+
+            confetti.y += confetti.speedY;
+            confetti.x += confetti.speedX;
+
+            if (confetti.y > canvas.height) {
+                confetti.y = -10;
+                confetti.x = Math.random() * canvas.width;
+            }
+        });
+        requestAnimationFrame(drawConfetti);
+    }
+
+    drawConfetti();
+}

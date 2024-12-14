@@ -30,22 +30,31 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734083295/jjpwh6wxegqt04ifzmns.jpg" alt="Memory 1" onclick="openImage(this.src)">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181205/q8zxuxjconejmnx484pl.jpg" alt="Memory 1" onclick="openImage(this.src)">
             </div>
             <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734083296/drvj754cxqwsejitoosq.jpg" alt="Memory 2" onclick="openImage(this.src)">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181214/hvyyjjzzkiqygx8scvdm.jpg" alt="Memory 2" onclick="openImage(this.src)">
             </div>
             <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734083296/futqor4lqyynrmlcgu73.jpg" alt="Memory 3" onclick="openImage(this.src)">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181231/kzfeysggjfeypcirnhuq.jpg" alt="Memory 3" onclick="openImage(this.src)">
             </div>
             <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734083296/snnhxvvje4mworgqnhz9.jpg" alt="Memory 4" onclick="openImage(this.src)">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181232/lqkuo3ybzaqbtzxgixgb.jpg" alt="Memory 4" onclick="openImage(this.src)">
             </div>
             <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734083296/av8jhfafxo0rzfmwrycn.jpg" alt="Memory 5" onclick="openImage(this.src)">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181231/jl72c6kmyvtimu0yfgsf.jpg" alt="Memory 5" onclick="openImage(this.src)">
             </div>
             <div class="swiper-slide">
-                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734083297/viiod9spxzngntb1yyuf.jpg" alt="Memory 6" onclick="openImage(this.src)">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181231/efhusgp8dtpcbksot7cl.jpg" alt="Memory 6" onclick="openImage(this.src)">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181232/cjiierdq3u0tgnzer2s0.jpg" alt="Memory 7" onclick="openImage(this.src)">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181232/whyvotqnsi8agqt26max.jpg" alt="Memory 8" onclick="openImage(this.src)">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://res.cloudinary.com/dyumj6tam/image/upload/v1734181232/bp4yvp9sdhvtlhqmp1xp.jpg" alt="Memory 9" onclick="openImage(this.src)">
             </div>
         </div>
         <!-- Add navigation -->
@@ -57,16 +66,21 @@
 <div class="section" id="video">
     <h2>Моё послание к тебе</h2>
     <div class="video">
-        <iframe src="https://www.youtube.com/embed/PyqODlguJQ0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/1SRG41l-anc" allowfullscreen></iframe>
     </div>
 </div>
 
 <div class="section" id="answer">
     <h2>Станешь моей женой?</h2>
     <div class="answer">
-        <button>Да! 💍</button>
+        <button id="yes-button">Да! 💍</button>
+    </div>
+    <div id="congrats-message" class="hidden">
+        <h1>Поздравляю! 🎉</h1>
+        <p>Ты сделала меня самым счастливым человеком в мире! 💖</p>
     </div>
 </div>
+<canvas id="confetti"></canvas>
 
 <!-- Модальное окно -->
 <div id="image-modal" class="modal">

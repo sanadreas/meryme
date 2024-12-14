@@ -201,7 +201,7 @@ body {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
-    margin: 20px auto;
+    margin: 20px auto 300px;
     max-width: 90%;
 }
 
@@ -353,4 +353,33 @@ audio {
         font-size: 0.9rem;
         padding: 8px 15px; /* Уменьшаем размер кнопки на маленьких экранах */
     }
+}
+
+.hidden {
+    display: none;
+}
+
+#congrats-message {
+    text-align: center;
+    color: #ffd700;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+#congrats-message p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #e353ef;
+}
+
+/* Конфетти */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
 }
