@@ -47,8 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById("play-music").addEventListener("click", function () {
     const music = document.getElementById("background-music");
-    music.play(); // Запускаем музыку
-    this.style.display = "none"; // Скрываем кнопку
+
+    // Проверяем, что музыка доступна и не заблокирована
+    if (music.paused) {
+        music.play().then(() => {
+            console.log("Музыка запущена!");
+        }).catch((err) => {
+            console.error("Ошибка воспроизведения музыки:", err);
+        });
+    }
+
+    // Скрываем кнопку после старта музыки
+    this.style.display = "none";
 });
 
 // Функция для создания фиксированного количества объектов
